@@ -1,0 +1,5 @@
+c:\users\thomas\documents\visual studio 2015\Projects\Coding-Trainer\Coding-Trainer\bin\Debug\Coding-Trainer.exe.config
+c:\users\thomas\documents\visual studio 2015\Projects\Coding-Trainer\Coding-Trainer\bin\Debug\Coding-Trainer.exe
+c:\users\thomas\documents\visual studio 2015\Projects\Coding-Trainer\Coding-Trainer\bin\Debug\Coding-Trainer.pdb
+c:\users\thomas\documents\visual studio 2015\Projects\Coding-Trainer\Coding-Trainer\obj\Debug\Coding-Trainer.exe
+c:\users\thomas\documents\visual studio 2015\Projects\Coding-Trainer\Coding-Trainer\obj\Debug\Coding-Trainer.pdb
