@@ -1,5 +1,3 @@
-# Coding-Trainer
-
 # What is Coding Trainer?
 
 Coding trainer is a project to encourage me to code more rather than putting it aside to play games.
