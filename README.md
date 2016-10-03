@@ -21,8 +21,9 @@ I welcome any suggestions and ideas
 
 Please bare in mind, I'm still new to coding (hense why I need this to encourage me more to learn) so they'll be mistakes and inefficient ways to achieve things.
 
-# Coding-Trainer
+# Coding-Trainer UI
 
-#UI
+![UI_Coding_trainer](URL/here)  
+
 Programs required
 - Qt\Qt5.7.0\...\qtcreator.exe
