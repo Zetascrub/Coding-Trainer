@@ -24,6 +24,15 @@ Please bare in mind, I'm still new to coding (hense why I need this to encourage
 # Coding-Trainer UI
 
 ![UI_Coding_trainer](./CT_UI.PNG)
+- [ ] Credits will be earned hourly (Determine how many per hour)
+- [ ] Credits can then be used to unlock something of particular desire
+- [ ] User earns credits per hour
+- [ ] Add more options to 'File'
+- [ ] Add more to 'Help'
+- [ ] Add more menus?
+- [ ] Populate white box with programs running currently
+- [ ] Allow user to select the programs in white box
+- [ ] Connect C# with Qt somehow? Or change the framework completely?
 
 Programs required
 - Qt\Qt5.7.0\...\qtcreator.exe
