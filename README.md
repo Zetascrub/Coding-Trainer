@@ -36,7 +36,7 @@ Please bare in mind, I'm still new to coding (hense why I need this to encourage
 
 Programs required
 - Qt\Qt5.7.0\...\qtcreator.exe
-<br><br>to begin working on this program download from this website
+<br><br>To begin working on this program download from this website
 <br>https://www.qt.io/download-open-source/#section-2
 <br>It is imperative that you have MinGW or some C compiler or this program is rendered useless.
 <br>Another approach is downloading the Qt Designer and workin on the UI seperate from the Code.
