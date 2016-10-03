@@ -23,7 +23,7 @@ Please bare in mind, I'm still new to coding (hense why I need this to encourage
 
 # Coding-Trainer UI
 
-![UI_Coding_trainer](./blob/master/CT_UI.PNG)
+![UI_Coding_trainer](./CT_UI.PNG)
 
 Programs required
 - Qt\Qt5.7.0\...\qtcreator.exe
