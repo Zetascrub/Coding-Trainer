@@ -20,3 +20,9 @@ I welcome any suggestions and ideas
 # Disclaimer
 
 Please bare in mind, I'm still new to coding (hense why I need this to encourage me more to learn) so they'll be mistakes and inefficient ways to achieve things.
+
+# Coding-Trainer
+
+#UI
+Programs required
+- Qt\Qt5.7.0\...\qtcreator.exe
