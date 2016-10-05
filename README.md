@@ -1,6 +1,6 @@
 # What is Coding Trainer?
 
-Coding trainer is a project to encourage users to code more. This is done by incentivizing users to work on their code in order to access certain "fun" progrmas.
+Coding trainer is a project to encourage users to code more and not procrastinate. This is done by incentivizing users to work on their code in order to access certain "fun" programs.
 
 # How does it work?
 
