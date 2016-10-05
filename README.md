@@ -43,5 +43,5 @@ Despite the fact that this program is a daemon process, users have asked that it
 <br>https://www.qt.io/download-open-source/#section-2
 <br>It is imperative that you have MinGW or some C compiler or this program is rendered useless. 
 <br>The provided link comes with the necessary Compiler.
-<br><br>Another approach is downloading the Qt Designer and working on the UI seperate from the Code.
-<br>The only setback is that there will be no inter connected talking between the *.ui *.cpp and *.h files
+<br><br>Another approach: download the Qt Designer and work on the UI seperate from the Code.
+<br>The only caveat is that there will be no inter connected talking between *.ui *.cpp and *.h files
