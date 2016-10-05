@@ -32,7 +32,9 @@ Please bare in mind, I'm still new to coding (hense why I need this to encourage
 - [ ] Add more menus?
 - [ ] Populate white box with programs running currently
 - http://doc.qt.io/qt-4.8/qprocess.html
+- http://www.bogotobogo.com/Qt/Qt5_QListView_QStringListModel_ModelView_MVC.php
 - [ ] Allow user to select the programs in white box
+- Can be done by adding a drop down box, refer to bogotobogo link
 - [ ] Connect C# with Qt somehow? Or change the framework completely?
 
 Programs required
