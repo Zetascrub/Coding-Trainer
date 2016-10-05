@@ -37,7 +37,7 @@ Despite the fact that this program is a daemon process, users have asked that it
 - Can be done by adding a drop down box, refer to bogotobogo link
 - [ ] Connect C# with Qt somehow? Or change the framework completely?
 
-Programs required
+# Programs required
 - Qt\Qt5.7.0\...\qtcreator.exe
 <br><br>To begin working on this program download from this website
 <br>https://www.qt.io/download-open-source/#section-2
