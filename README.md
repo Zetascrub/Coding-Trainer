@@ -25,7 +25,8 @@ Despite the fact that this program is a daemon process, users have asked that it
 
 ![UI_Coding_trainer](./CT_UI.PNG)
 - [ ] Credits will be earned hourly (Determine how many per hour)
-- [ ] Credits can then be used to unlock something of particular desire
+- [ ] Make sure that an IDE is of focused window in order for Credits to be earned
+- [ ] Use a Credit to unlock something of particular desire
 - [ ] User earns credits per hour
 - [ ] Add more options to 'File'
 - [ ] Add more to 'Help'
