@@ -38,7 +38,7 @@ Please bare in mind, I'm still new to coding (hense why I need this to encourage
 - [ ] Connect C# with Qt somehow? Or change the framework completely?
 
 Programs required
-<br><br>Qt\Qt5.7.0\...\qtcreator.exe
+- Qt\Qt5.7.0\...\qtcreator.exe
 <br><br>To begin working on this program download from this website
 <br>https://www.qt.io/download-open-source/#section-2
 <br>It is imperative that you have MinGW or some C compiler or this program is rendered useless.
