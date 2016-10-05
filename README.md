@@ -21,7 +21,7 @@ I welcome any suggestions and ideas
 
 # Coding-Trainer UI
 
-Despite the fact that this program is a daemon process, users have asked that it have a UI to select the programs that they wish to have locked from easy access. Below is the current design. Below that are some possible suggested TODOs for the UI itself.
+Despite the fact that this program is a daemon process, users have asked that it have a UI to select the programs that they wish to have locked from easy access. Below is the current design. Below that are some possible suggested TODOs for the UI itself. Bullet points below a TODO are possible resources that may be useful.
 
 ![UI_Coding_trainer](./CT_UI.PNG)
 - [ ] Credits will be earned hourly (Determine how many per hour)
