@@ -9,7 +9,7 @@ The program is a [daemon](https://en.wikipedia.org/wiki/Daemon_(computing)) that
 
 # Inspiration
 
-This was inspired the Oasis fitness trainer in the book, Ready Player One. Where Wade had to do a certain amount of exercise daily to enable access to the Oasis, in the end he became healthier and fitter. My plan is to get better at coding by using this idea.
+This was inspired the Oasis fitness trainer in the book, Ready Player One. Where Wade had to do a certain amount of exercise daily to enable access to the Oasis, in the end he became healthier and fitter. 
 
 # How can you help?
 
