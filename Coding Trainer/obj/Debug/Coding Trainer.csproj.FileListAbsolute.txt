@@ -1,0 +1,10 @@
+d:\documents\visual studio 2015\Projects\Coding Trainer\Coding Trainer\bin\Debug\Coding Trainer.exe.config
+d:\documents\visual studio 2015\Projects\Coding Trainer\Coding Trainer\obj\Debug\Coding Trainer.csprojResolveAssemblyReference.cache
+d:\documents\visual studio 2015\Projects\Coding Trainer\Coding Trainer\obj\Debug\Coding_Trainer.AboutBox1.resources
+d:\documents\visual studio 2015\Projects\Coding Trainer\Coding Trainer\obj\Debug\Coding_Trainer.Form1.resources
+d:\documents\visual studio 2015\Projects\Coding Trainer\Coding Trainer\obj\Debug\Coding_Trainer.Properties.Resources.resources
+d:\documents\visual studio 2015\Projects\Coding Trainer\Coding Trainer\obj\Debug\Coding Trainer.csproj.GenerateResource.Cache
+d:\documents\visual studio 2015\Projects\Coding Trainer\Coding Trainer\bin\Debug\Coding Trainer.exe
+d:\documents\visual studio 2015\Projects\Coding Trainer\Coding Trainer\bin\Debug\Coding Trainer.pdb
+d:\documents\visual studio 2015\Projects\Coding Trainer\Coding Trainer\obj\Debug\Coding Trainer.exe
+d:\documents\visual studio 2015\Projects\Coding Trainer\Coding Trainer\obj\Debug\Coding Trainer.pdb
