@@ -18,3 +18,13 @@ C:\Users\Thomas\Source\Repos\Coding-Trainer2\Coding Trainer\obj\Debug\Coding_Tra
 C:\Users\Thomas\Source\Repos\Coding-Trainer2\Coding Trainer\obj\Debug\Coding_Trainer.Form1.resources
 C:\Users\Thomas\Source\Repos\Coding-Trainer2\Coding Trainer\obj\Debug\Coding_Trainer.Properties.Resources.resources
 C:\Users\Thomas\Source\Repos\Coding-Trainer2\Coding Trainer\obj\Debug\Coding Trainer.csproj.GenerateResource.Cache
+C:\Users\Thomas\Documents\GitHub\Coding-Trainer\Coding Trainer\bin\Debug\Coding Trainer.exe.config
+C:\Users\Thomas\Documents\GitHub\Coding-Trainer\Coding Trainer\obj\Debug\Coding Trainer.exe
+C:\Users\Thomas\Documents\GitHub\Coding-Trainer\Coding Trainer\obj\Debug\Coding Trainer.pdb
+C:\Users\Thomas\Documents\GitHub\Coding-Trainer\Coding Trainer\bin\Debug\Coding Trainer.exe
+C:\Users\Thomas\Documents\GitHub\Coding-Trainer\Coding Trainer\bin\Debug\Coding Trainer.pdb
+C:\Users\Thomas\Documents\GitHub\Coding-Trainer\Coding Trainer\obj\Debug\Coding Trainer.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\Coding-Trainer\Coding Trainer\obj\Debug\Coding_Trainer.AboutBox1.resources
+C:\Users\Thomas\Documents\GitHub\Coding-Trainer\Coding Trainer\obj\Debug\Coding_Trainer.Form1.resources
+C:\Users\Thomas\Documents\GitHub\Coding-Trainer\Coding Trainer\obj\Debug\Coding_Trainer.Properties.Resources.resources
+C:\Users\Thomas\Documents\GitHub\Coding-Trainer\Coding Trainer\obj\Debug\Coding Trainer.csproj.GenerateResource.Cache

@@ -44,6 +44,7 @@
             this.lbl_credits = new System.Windows.Forms.Label();
             this.btn_ProcessRefresh = new System.Windows.Forms.Button();
             this.btn_ignore = new System.Windows.Forms.Button();
+            this.lbl_Active = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -191,11 +192,21 @@
             this.btn_ignore.UseVisualStyleBackColor = true;
             this.btn_ignore.Click += new System.EventHandler(this.btn_ignore_Click);
             // 
+            // lbl_Active
+            // 
+            this.lbl_Active.AutoSize = true;
+            this.lbl_Active.Location = new System.Drawing.Point(12, 203);
+            this.lbl_Active.Name = "lbl_Active";
+            this.lbl_Active.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Active.TabIndex = 6;
+            this.lbl_Active.Text = "label3";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 248);
+            this.Controls.Add(this.lbl_Active);
             this.Controls.Add(this.lbl_credits);
             this.Controls.Add(this.btn_Stop);
             this.Controls.Add(this.btn_Start);
@@ -238,6 +249,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button btn_ProcessRefresh;
         private System.Windows.Forms.Button btn_ignore;
+        private System.Windows.Forms.Label lbl_Active;
     }
 }
 

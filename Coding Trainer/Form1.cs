@@ -21,6 +21,27 @@ namespace Coding_Trainer
         int counter = 1;
         int credits = 0;
 
+
+        [DllImport("user32.dll")]
+        static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll")]
+        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+
+        private string GetActiveWindowTitle()
+        {
+            const int nChars = 256;
+            StringBuilder Buff = new StringBuilder(nChars);
+            IntPtr handle = GetForegroundWindow();
+
+            if (GetWindowText(handle, Buff, nChars) > 0)
+            {
+                return Buff.ToString();
+            }
+            return null;
+        }
+
+
         public Form1()
         {
             InitializeComponent();
@@ -59,8 +80,19 @@ namespace Coding_Trainer
             }
         }
 
+        void report_active()
+        {
+            while (true)
+            {
+                active_window(GetActiveWindowTitle());
+                Thread.Sleep(10000);
+            }
+        }
 
-
+        void active_window(string window)
+        {
+            lbl_Active.Invoke((MethodInvoker)delegate { lbl_Active.Text = "Active Window: " + window; });
+        }
 
         private void Process_watcher_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -100,7 +132,7 @@ namespace Coding_Trainer
         private void on_load(object sender, EventArgs e)
         {
             processRefresh();
-            Thread T = new Thread(new ThreadStart(check_top_process));
+            Thread T = new Thread(new ThreadStart(report_active));
             T.Start();
             this.Invoke((MethodInvoker)delegate { lbl_credits.Text = string.Format("You currently have {0} Programming credit(s)", credits); });
         }
@@ -186,24 +218,6 @@ namespace Coding_Trainer
             // TODO: Create a list of processes to ignore. such as System processes
             Properties.Settings.Default.ignore_list = "test";
             Properties.Settings.Default.Save();
-        }
-
-        void check_top_process()
-        {
-            while (true)
-            {
-                try
-                {
-                    var currentproc = Process.GetCurrentProcess();
-                    string name = currentproc.ProcessName;
-                    MessageBox.Show(name);
-                    Thread.Sleep(10000);
-                }
-                catch
-                {
-                    MessageBox.Show("Error");
-                }
-            }
         }
     }
 }
