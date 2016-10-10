@@ -23,7 +23,7 @@ I welcome any suggestions and ideas
 
 Despite the fact that this program is a daemon process, users have asked that it have a UI to select the programs that they wish to have locked from easy access. Below is the current design. Below that are some possible suggested TODOs for the UI itself. Bullet points below a TODO are possible resources that may be useful.
 
-![UI_Coding_trainer](./Coding Trainer.png)
+![Coding Trainer UI](./Coding Trainer.PNG)
 - [ ] Credits will be earned hourly (Determine how many per hour)
 - [ ] Make sure that an IDE is of focused window in order for Credits to be earned
 - [ ] Use a Credit to unlock something of particular desire
