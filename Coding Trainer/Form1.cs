@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using System.Timers;
+using System.Runtime.InteropServices;
 
 namespace Coding_Trainer
 {
@@ -58,6 +59,9 @@ namespace Coding_Trainer
             }
         }
 
+
+
+
         private void Process_watcher_DoWork(object sender, DoWorkEventArgs e)
         {
             // Monitor the processes currently running
@@ -96,6 +100,8 @@ namespace Coding_Trainer
         private void on_load(object sender, EventArgs e)
         {
             processRefresh();
+            Thread T = new Thread(new ThreadStart(check_top_process));
+            T.Start();
             this.Invoke((MethodInvoker)delegate { lbl_credits.Text = string.Format("You currently have {0} Programming credit(s)", credits); });
         }
 
@@ -103,11 +109,18 @@ namespace Coding_Trainer
         {
             // Gets all current running processes and adds it to the listbox
             Process[] processlist = Process.GetProcesses();
-            foreach (Process theprocess in processlist)
+            List<string> processes = new List<string>();
+            foreach(Process process in processlist)
             {
-                if (!lb_BlockedProcess.Items.Contains(theprocess.ProcessName))
+                processes.Add(process.ProcessName);
+                 
+            }
+            List<string> nodupes = processes.Distinct().ToList();
+            foreach (string theprocess in nodupes)
+            {
+                if (!lb_BlockedProcess.Items.Contains(theprocess))
                 {
-                    this.Invoke((MethodInvoker)delegate { lb_ProcessList.Items.Add(theprocess.ProcessName); });
+                    this.Invoke((MethodInvoker)delegate { lb_ProcessList.Items.Add(theprocess); });
                 }
             }
         }
@@ -153,6 +166,7 @@ namespace Coding_Trainer
             {
                 process_watcher.RunWorkerAsync();
                 block_timer.RunWorkerAsync();
+
             }
             else
             {
@@ -172,6 +186,24 @@ namespace Coding_Trainer
             // TODO: Create a list of processes to ignore. such as System processes
             Properties.Settings.Default.ignore_list = "test";
             Properties.Settings.Default.Save();
+        }
+
+        void check_top_process()
+        {
+            while (true)
+            {
+                try
+                {
+                    var currentproc = Process.GetCurrentProcess();
+                    string name = currentproc.ProcessName;
+                    MessageBox.Show(name);
+                    Thread.Sleep(10000);
+                }
+                catch
+                {
+                    MessageBox.Show("Error");
+                }
+            }
         }
     }
 }

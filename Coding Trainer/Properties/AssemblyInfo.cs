@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Coding Trainer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Add programs to the block list to prevent them from staying open. For each hour you have a program blocked, you earn 1 programmers credit. Which you can spend on opening a blocked item.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("IronPhreak")]
 [assembly: AssemblyProduct("Coding Trainer")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
