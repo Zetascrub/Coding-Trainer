@@ -1,32 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Diagnostics;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
-using System.Windows.Forms;
-using System.Timers;
+using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading;
+using System.Timers;
+using System.Windows.Forms;
 
 namespace Coding_Trainer
 {
     public partial class Form1 : Form
     {
-        BackgroundWorker process_watcher = new BackgroundWorker();
-        BackgroundWorker block_timer = new BackgroundWorker();
-        int counter = 1;
-        int credits = 0;
-
-
-        [DllImport("user32.dll")]
-        static extern IntPtr GetForegroundWindow();
+        private BackgroundWorker process_watcher = new BackgroundWorker();
+        private BackgroundWorker block_timer = new BackgroundWorker();
+        private int counter = 1;
+        private int credits = 0;
 
         [DllImport("user32.dll")]
-        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+        private static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll")]
+        private static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
 
         private string GetActiveWindowTitle()
         {
@@ -40,7 +36,6 @@ namespace Coding_Trainer
             }
             return null;
         }
-
 
         public Form1()
         {
@@ -63,7 +58,7 @@ namespace Coding_Trainer
 
         private void timerElapsed(object sender, ElapsedEventArgs e)
         {
-            if (counter < 10)
+            if ((counter < 10) && (GetActiveWindowTitle().Contains("Microsoft Visual Studio")) || (GetActiveWindowTitle().Contains("Intellij IDEA")))
             {
                 // Increment counter and leave method
                 counter++;
@@ -80,7 +75,7 @@ namespace Coding_Trainer
             }
         }
 
-        void report_active()
+        private void report_active()
         {
             while (true)
             {
@@ -89,7 +84,7 @@ namespace Coding_Trainer
             }
         }
 
-        void active_window(string window)
+        private void active_window(string window)
         {
             lbl_Active.Invoke((MethodInvoker)delegate { lbl_Active.Text = "Active Window: " + window; });
         }
@@ -111,9 +106,9 @@ namespace Coding_Trainer
                 Process[] processlist = Process.GetProcesses();
                 foreach (Process theprocess in processlist)
                 {
-                    foreach(string item in lb_BlockedProcess.Items)
+                    foreach (string item in lb_BlockedProcess.Items)
                     {
-                        if(item == theprocess.ProcessName)
+                        if (item == theprocess.ProcessName)
                         {
                             theprocess.Kill();
                         }
@@ -142,10 +137,9 @@ namespace Coding_Trainer
             // Gets all current running processes and adds it to the listbox
             Process[] processlist = Process.GetProcesses();
             List<string> processes = new List<string>();
-            foreach(Process process in processlist)
+            foreach (Process process in processlist)
             {
                 processes.Add(process.ProcessName);
-                 
             }
             List<string> nodupes = processes.Distinct().ToList();
             foreach (string theprocess in nodupes)
@@ -160,7 +154,7 @@ namespace Coding_Trainer
         private void btn_Add_Click(object sender, EventArgs e)
         {
             // Adds to Blocked list
-            if(lb_ProcessList.SelectedIndex != -1)
+            if (lb_ProcessList.SelectedIndex != -1)
             {
                 lb_BlockedProcess.Items.Add(lb_ProcessList.Items[lb_ProcessList.SelectedIndex]);
                 lb_ProcessList.Items.RemoveAt(lb_ProcessList.SelectedIndex);
@@ -182,7 +176,7 @@ namespace Coding_Trainer
             processRefresh();
         }
 
-        void processRefresh()
+        private void processRefresh()
         {
             // Refresh the process list
             this.Invoke((MethodInvoker)delegate { lb_ProcessList.Items.Clear(); });
@@ -194,11 +188,10 @@ namespace Coding_Trainer
         private void btn_Start_Click(object sender, EventArgs e)
         {
             // Starts the threads
-            if(lb_BlockedProcess.Items.Count != 0)
+            if (lb_BlockedProcess.Items.Count != 0)
             {
                 process_watcher.RunWorkerAsync();
                 block_timer.RunWorkerAsync();
-
             }
             else
             {
