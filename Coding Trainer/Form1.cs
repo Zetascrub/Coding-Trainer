@@ -58,30 +58,46 @@ namespace Coding_Trainer
 
         private void timerElapsed(object sender, ElapsedEventArgs e)
         {
-            if ((counter < 10) && (GetActiveWindowTitle().Contains("Microsoft Visual Studio")) || (GetActiveWindowTitle().Contains("Intellij IDEA")))
+            try
             {
-                // Increment counter and leave method
-                counter++;
-                return;
+                if (counter == 60000)
+                {
+                    if (GetActiveWindowTitle().Contains("Microsoft Visual Studio"))
+                    {
+                        // Increment counter and leave method
+
+                        credits++;
+                        return;
+                    }
+                    if (!GetActiveWindowTitle().Contains("Microsoft Visual Studio") && (credits >= 0))
+                    {
+                        // Increase the credit
+                        if (credits == 0)
+                        {
+                            //Do Nothing
+                        }
+                        else
+                        {
+                            credits--;
+                        }
+                    }
+                }
             }
-            else
+            catch
             {
-                // Increase the credit
-                credits++;
+            }
+            finally
+            {
+                //Report Active Window
+                report_active();
                 //pass the result
                 this.Invoke((MethodInvoker)delegate { lbl_credits.Text = string.Format("You currently have {0} Programming credit(s)", credits); });
-                // reset minutes counter
-                counter = 1;
             }
         }
 
         private void report_active()
         {
-            while (true)
-            {
-                active_window(GetActiveWindowTitle());
-                Thread.Sleep(10000);
-            }
+            active_window(GetActiveWindowTitle());
         }
 
         private void active_window(string window)
@@ -108,7 +124,7 @@ namespace Coding_Trainer
                 {
                     foreach (string item in lb_BlockedProcess.Items)
                     {
-                        if (item == theprocess.ProcessName)
+                        if ((item == theprocess.ProcessName) && (!Properties.Settings.Default.IgnoreList.Contains(item)))
                         {
                             theprocess.Kill();
                         }
@@ -190,8 +206,19 @@ namespace Coding_Trainer
             // Starts the threads
             if (lb_BlockedProcess.Items.Count != 0)
             {
+                //Start the Background workers
                 process_watcher.RunWorkerAsync();
                 block_timer.RunWorkerAsync();
+
+                //Disable the controls
+                Form1 f1 = new Form1();
+                foreach (Control c in Controls)
+                {
+                    if ((c.Text != "Stop") || (c.Name.Contains("FileStop")) || (c.Name.Contains("Menu")))
+                    {
+                        c.Enabled = false;
+                    }
+                }
             }
             else
             {
@@ -204,13 +231,28 @@ namespace Coding_Trainer
             // Stops the threads
             process_watcher.CancelAsync();
             block_timer.CancelAsync();
+            Form1 f1 = new Form1();
+            foreach (Control c in f1.Controls)
+            {
+                if ((c).Text != "Stop")
+                {
+                    c.Enabled = false;
+                }
+            }
         }
 
         private void btn_ignore_Click(object sender, EventArgs e)
         {
             // TODO: Create a list of processes to ignore. such as System processes
-            Properties.Settings.Default.ignore_list = "test";
             Properties.Settings.Default.Save();
+            Properties.Settings.Default.Reload();
+            MessageBox.Show(Properties.Settings.Default.IgnoreList);
+            Properties.Settings.Default.Upgrade();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
         }
     }
 }

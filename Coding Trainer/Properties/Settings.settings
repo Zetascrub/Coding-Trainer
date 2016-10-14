@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Coding_Trainer.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ignore_list" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="IgnoreList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Test,Test1,Test2</Value>
     </Setting>
   </Settings>
 </SettingsFile>

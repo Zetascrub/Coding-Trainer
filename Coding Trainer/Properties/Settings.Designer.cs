@@ -25,13 +25,13 @@ namespace Coding_Trainer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ignore_list {
+        [global::System.Configuration.DefaultSettingValueAttribute("Test,Test1,Test2")]
+        public string IgnoreList {
             get {
-                return ((string)(this["ignore_list"]));
+                return ((string)(this["IgnoreList"]));
             }
             set {
-                this["ignore_list"] = value;
+                this["IgnoreList"] = value;
             }
         }
     }
