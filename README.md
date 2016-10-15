@@ -16,6 +16,18 @@ For example: If the user has blocked the Steam process, with 0 credits, each tim
 
 In the current version, the tracker will stop once a blocked process is opened when the user has 1 or more credits and must be restarted in order to block again, however your credits will remain (so long as the app remains open)
 
+# Disclaimer
+
+If you aren't already aware, this app will force close selected processes on your system, currently it's set to not display common processes (such as explorer). This means that any process that you select and forcefully close is down to you, I hold no responsibility if you select a process which leads to system instablity. Please be careful when selecting.
+
+# IDEs that get tracked 
+
+Currently the following IDEs are tracked 
+* Microsoft visual Studio
+* Pycharm
+* Aton (Needs testing)
+
+If you can assist in adding more, please let me know. Currently it's monitored by the window title, so if the title contains "Visual Studio" then this will allow points added.
 
 # Inspiration
 
