@@ -4,11 +4,18 @@ Coding trainer is a project to encourage users to code more and not procrastinat
 
 # How does it work?
 
-The program is a [daemon](https://en.wikipedia.org/wiki/Daemon_(computing)) that monitors opened processes. For example, if the user opens a game, a game client or other specified programs, the application will be forcefully closed and a warning will pop up, such as "Not enough credits to play".
+The program is a [daemon](https://en.wikipedia.org/wiki/Daemon_(computing)) that monitors opened processes. 
 
-* Credits will be earned hourly so long as your IDE is open and focused
-* Credit will be deducted while game clients are open
-* Allow user to select the programs in white box
+To add to the blocked process list, the target process must be open first, so open and minimise fullscreen games. If you can't see the process on the list, it the "Ref" (Refresh) button to reload the list. Once you selected it, click the ">>" button to add it to the list.
+
+When you have 1 or more blocked items, click "Start"
+
+So long as one of the monitored IDEs is open and focused (top most window) credits will be counted. Blocked proccesses will be closed automatically if the user has 0 credits. But if the user has 1 or more, blocked app is allowed to be opened with a credit deduction.
+
+For example: If the user has blocked the Steam process, with 0 credits, each time the user opens steam, it'll be closed straight away. After 30 minutes of active IDE time, 1 credit will be awarded and will allow steam to open.
+
+In the current version, the tracker will stop once a blocked process is opened when the user has 1 or more credits and must be restarted in order to block again, however your credits will remain (so long as the app remains open)
+
 
 # Inspiration
 
@@ -28,3 +35,8 @@ With the UI, you can select the currently running processes you wish to block.
 Fork or email me at Info@IronPhreak.com
 <br>Add your pull request, if it meets standards and adds functionality to the program they will be added.
  I welcome any suggestions and ideas
+ 
+ 
+ # What's stopping me just opening what I want without this app?
+ 
+ In truth, nothing. This isn't meant to restrict or change how you work, more so encourage. Chances are you will use this once and that's all. But if you want to have a slight help in automatically closing those games, then this might help.
