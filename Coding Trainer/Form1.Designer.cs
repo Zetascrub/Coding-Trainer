@@ -30,6 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuFileStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuFileStop = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,10 +45,7 @@
             this.btn_Stop = new System.Windows.Forms.Button();
             this.lbl_credits = new System.Windows.Forms.Label();
             this.btn_ProcessRefresh = new System.Windows.Forms.Button();
-            this.btn_ignore = new System.Windows.Forms.Button();
             this.lbl_Active = new System.Windows.Forms.Label();
-            this.MenuFileStart = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuFileStop = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,10 +70,24 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // MenuFileStart
+            // 
+            this.MenuFileStart.Name = "MenuFileStart";
+            this.MenuFileStart.Size = new System.Drawing.Size(98, 22);
+            this.MenuFileStart.Text = "Start";
+            this.MenuFileStart.Click += new System.EventHandler(this.btn_Start_Click);
+            // 
+            // MenuFileStop
+            // 
+            this.MenuFileStop.Name = "MenuFileStop";
+            this.MenuFileStop.Size = new System.Drawing.Size(98, 22);
+            this.MenuFileStop.Text = "Stop";
+            this.MenuFileStop.Click += new System.EventHandler(this.btn_Stop_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -187,16 +200,6 @@
             this.btn_ProcessRefresh.UseVisualStyleBackColor = true;
             this.btn_ProcessRefresh.Click += new System.EventHandler(this.btn_ProcessRefresh_Click);
             // 
-            // btn_ignore
-            // 
-            this.btn_ignore.Location = new System.Drawing.Point(211, 50);
-            this.btn_ignore.Name = "btn_ignore";
-            this.btn_ignore.Size = new System.Drawing.Size(42, 23);
-            this.btn_ignore.TabIndex = 3;
-            this.btn_ignore.Text = "Ign";
-            this.btn_ignore.UseVisualStyleBackColor = true;
-            this.btn_ignore.Click += new System.EventHandler(this.btn_ignore_Click);
-            // 
             // lbl_Active
             // 
             this.lbl_Active.AutoSize = true;
@@ -205,20 +208,6 @@
             this.lbl_Active.Size = new System.Drawing.Size(35, 13);
             this.lbl_Active.TabIndex = 6;
             this.lbl_Active.Text = "label3";
-            // 
-            // MenuFileStart
-            // 
-            this.MenuFileStart.Name = "MenuFileStart";
-            this.MenuFileStart.Size = new System.Drawing.Size(152, 22);
-            this.MenuFileStart.Text = "Start";
-            this.MenuFileStart.Click += new System.EventHandler(this.btn_Start_Click);
-            // 
-            // MenuFileStop
-            // 
-            this.MenuFileStop.Name = "MenuFileStop";
-            this.MenuFileStop.Size = new System.Drawing.Size(152, 22);
-            this.MenuFileStop.Text = "Stop";
-            this.MenuFileStop.Click += new System.EventHandler(this.btn_Stop_Click);
             // 
             // Form1
             // 
@@ -229,7 +218,6 @@
             this.Controls.Add(this.lbl_credits);
             this.Controls.Add(this.btn_Stop);
             this.Controls.Add(this.btn_Start);
-            this.Controls.Add(this.btn_ignore);
             this.Controls.Add(this.btn_Remove);
             this.Controls.Add(this.btn_ProcessRefresh);
             this.Controls.Add(this.btn_Add);
@@ -267,7 +255,6 @@
         private System.Windows.Forms.Label lbl_credits;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button btn_ProcessRefresh;
-        private System.Windows.Forms.Button btn_ignore;
         private System.Windows.Forms.Label lbl_Active;
         private System.Windows.Forms.ToolStripMenuItem MenuFileStart;
         private System.Windows.Forms.ToolStripMenuItem MenuFileStop;

@@ -17,6 +17,8 @@ namespace Coding_Trainer
         private BackgroundWorker block_timer = new BackgroundWorker();
         private int counter = 1;
         private int credits = 0;
+        private string[] IDEs = { "Microsoft Visual Studio", "Pycharm", "Atom" };
+        private string[] Safe_Processes = { "chrome", "Firefox", "opera", "acrotray", "ADService", "AppServices", "ccEvtMrg", "ccSetMgr", "csrcs", "csrss", "ctfmon", "explorer", "iexplore", "lsass", "Navapsvc", "navapw32", "nvsrvc32", "realsched", "rundll32", "savscan", "services", "smss", "spoolsv", "svchost", "System Idle Process", "taskmgr", "wdfmgr", "winlogon", "winword" };
 
         [DllImport("user32.dll")]
         private static extern IntPtr GetForegroundWindow();
@@ -60,25 +62,45 @@ namespace Coding_Trainer
         {
             try
             {
-                if (counter == 60000)
-                {
-                    if (GetActiveWindowTitle().Contains("Microsoft Visual Studio"))
-                    {
-                        // Increment counter and leave method
+                Process[] processlist = Process.GetProcesses();
 
-                        credits++;
-                        return;
-                    }
-                    if (!GetActiveWindowTitle().Contains("Microsoft Visual Studio") && (credits >= 0))
+                if (IDEs.Contains(GetActiveWindowTitle()))
+                {
+                    // Increment counter and leave method
+
+                    credits++;
+                    return;
+                }
+                if (!IDEs.Contains(GetActiveWindowTitle()))
+                {
+                    // Increase the credit
+                    if (credits == 0)
                     {
-                        // Increase the credit
-                        if (credits == 0)
+                        foreach (Process theprocess in processlist)
                         {
-                            //Do Nothing
+                            foreach (string item in lb_BlockedProcess.Items)
+                            {
+                                if (item == theprocess.ProcessName)
+                                {
+                                    theprocess.Kill();
+                                }
+                            }
                         }
-                        else
+                    }
+                    else
+                    {
+                        foreach (Process theprocess in processlist)
                         {
-                            credits--;
+                            foreach (string item in lb_BlockedProcess.Items)
+                            {
+                                if (item == theprocess.ProcessName)
+                                {
+                                    theprocess.Kill();
+                                    stop();
+                                    credits--;
+                                    MessageBox.Show(string.Format("You have opened {0}", theprocess.ProcessName));
+                                }
+                            }
                         }
                     }
                 }
@@ -90,6 +112,14 @@ namespace Coding_Trainer
             {
                 //Report Active Window
                 report_active();
+                if (counter == 1800)
+                {
+                    counter = 1;
+                }
+                else
+                {
+                    counter++;
+                }
                 //pass the result
                 this.Invoke((MethodInvoker)delegate { lbl_credits.Text = string.Format("You currently have {0} Programming credit(s)", credits); });
             }
@@ -119,17 +149,6 @@ namespace Coding_Trainer
                     return;
                 }
                 Thread.Sleep(1000);
-                Process[] processlist = Process.GetProcesses();
-                foreach (Process theprocess in processlist)
-                {
-                    foreach (string item in lb_BlockedProcess.Items)
-                    {
-                        if ((item == theprocess.ProcessName) && (!Properties.Settings.Default.IgnoreList.Contains(item)))
-                        {
-                            theprocess.Kill();
-                        }
-                    }
-                }
             }
         }
 
@@ -160,7 +179,7 @@ namespace Coding_Trainer
             List<string> nodupes = processes.Distinct().ToList();
             foreach (string theprocess in nodupes)
             {
-                if (!lb_BlockedProcess.Items.Contains(theprocess))
+                if (!lb_BlockedProcess.Items.Contains(theprocess) && (!Safe_Processes.Contains(theprocess)))
                 {
                     this.Invoke((MethodInvoker)delegate { lb_ProcessList.Items.Add(theprocess); });
                 }
@@ -226,7 +245,7 @@ namespace Coding_Trainer
             }
         }
 
-        private void btn_Stop_Click(object sender, EventArgs e)
+        private void stop()
         {
             // Stops the threads
             process_watcher.CancelAsync();
@@ -241,13 +260,9 @@ namespace Coding_Trainer
             }
         }
 
-        private void btn_ignore_Click(object sender, EventArgs e)
+        private void btn_Stop_Click(object sender, EventArgs e)
         {
-            // TODO: Create a list of processes to ignore. such as System processes
-            Properties.Settings.Default.Save();
-            Properties.Settings.Default.Reload();
-            MessageBox.Show(Properties.Settings.Default.IgnoreList);
-            Properties.Settings.Default.Upgrade();
+            stop();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
