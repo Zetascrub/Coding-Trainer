@@ -15,7 +15,7 @@ The program is a [daemon](https://en.wikipedia.org/wiki/Daemon_(computing)) that
 This was inspired by the Oasis fitness trainer in the book, [Ready Player One](https://en.wikipedia.org/wiki/Ready_Player_One). Where Wade had to do a certain amount of exercise daily to enable access to the Oasis. In the end he became healthier and fitter. 
 
 # Coding Trainer UI
-![Coding Trainer UI](./Coding Trainer.PNG)
+![Coding Trainer UI](./Capture.PNG)
 
 Despite the fact that this program is a daemon process, users have asked that it have a UI to select the programs that they wish to have locked from easy access. 
 
