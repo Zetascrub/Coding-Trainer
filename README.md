@@ -25,7 +25,7 @@ If you aren't already aware, this app will force close selected processes on you
 Currently the following IDEs are tracked 
 * Microsoft visual Studio
 * Pycharm
-* Aton (Needs testing)
+* Atom (Needs testing)
 
 If you can assist in adding more, please let me know. Currently it's monitored by the window title, so if the title contains "Visual Studio" then this will allow points added.
 
